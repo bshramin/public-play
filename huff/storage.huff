@@ -1,0 +1,10 @@
+#define constant VALUE = FREE_STORAGE_POINTER()
+
+#define macro SET_5_READ_5() = takes(0) returns(0) {
+    0x5
+    [VALUE]
+    sstore
+
+    [VALUE]
+    sload
+}
