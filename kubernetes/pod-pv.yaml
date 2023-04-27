@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu-pod
+  namespace: namespace
+spec:
+  containers:
+  - name: ubuntu-container
+    image: ubuntu:latest
+    command: ["/bin/bash"]
+    args: ["-c", "sleep infinity"]
+    volumeMounts:
+    - name: pvc-pv-id
+      mountPath: /data
+  volumes:
+    - name: pvc-pv-id
+      hostPath:
+        path: /
